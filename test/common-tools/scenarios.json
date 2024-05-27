@@ -1,5 +1,5 @@
 {
-    "hello": {
+    "test": {
         "image": "mcr.microsoft.com/devcontainers/base:bookworm",
         "features": {
             "common-tools": {}
