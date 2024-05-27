@@ -32,6 +32,9 @@
 
 set -e
 
+# Import test library for `check` command
+source dev-container-features-test-lib
+
 # Definition specific tests
 check "gzip" gzip  --version
 check "fzf" fzf  --version
