@@ -1,0 +1,21 @@
+{
+    "name": "common-tools",
+    "id": "common-tools",
+    "version": "1.0.0",
+    "description": "Base tools to be added on top of regular devcontainer images",
+    "options": {
+        "install_antibody": {
+            "type": "boolean",
+            "default": true,
+            "description": "Install antibody to manage zsh plugins"
+        },
+        "install_fzf": {
+            "type": "boolean",
+            "default": true,
+            "description": "Install fzf to search files and history"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

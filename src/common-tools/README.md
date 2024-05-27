@@ -1,15 +1,16 @@
 
-# Hello, World! (hello)
+# Common Tools
 
-A hello world feature
+This feature only adds a few components on top of the base devcontainer image
+- fzf (fuzzy finder)
+- gzip (compression tool)
+- antibody (zsh plugin manager)
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/devcontainers/feature-starter/hello:1": {
-        "version": "latest"
-    }
+    "ghcr.io/danielulisses/features/common-tools:1": {}
 }
 ```
 
@@ -17,8 +18,8 @@ A hello world feature
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| greeting | Select a pre-made greeting, or enter your own | string | hey |
-
+| install_antibody | Install antibody | boolean | true |
+| install_fzf | Install fzf | boolean | true |
 
 
 ---
