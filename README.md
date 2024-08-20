@@ -8,16 +8,15 @@
 
 This repository contains a _collection_ of two Features - `hello` and `color`. These Features serve as simple feature implementations.  Each sub-section below shows a sample `devcontainer.json` alongside example usage of the Feature.
 
-### `hello`
+### `common`
 
-Running `hello` inside the built container will print the greeting provided to it via its `greeting` option.
+Running `common` inside the built container
 
 ```jsonc
 {
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
-        "ghcr.io/devcontainers/feature-starter/hello:1": {
-            "greeting": "Hello"
+        "ghcr.io/danielulisses/features/common-tools:1": {
         }
     }
 }
