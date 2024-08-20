@@ -5,11 +5,19 @@ echo "Installing required features"
 
 INSTALL_ANTIBODY="${INSTALL_ANTIBODY:-true}"
 INSTALL_FZF="${INSTALL_FZF:-true}"
+INSTALL_GUM="${INSTALL_GUM:-true}"
 USERNAME="vscode"
 
 if [ "$(id -u)" -ne 0 ]; then
     echo -e 'Script must be run as root. Use sudo, su, or add "USER root" to your Dockerfile before running this script.'
     exit 1
+fi
+
+if [ "$INSTALL_GUM" = "true" ]; then
+    echo "Installing GUM"
+    sudo mkdir -p /etc/apt/keyrings
+    curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+    echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
 fi
 
 
@@ -30,6 +38,9 @@ install_debian_packages() {
         if [ "$INSTALL_FZF" = "true" ]; then
             package_list="${package_list} fzf"
         fi
+
+        if [ "$INSTALL_GUM" = "true" ]; then
+            package_list="${package_list} software-properties-common gum"
 
     fi
 
