@@ -1,7 +1,7 @@
 {
     "name": "common-tools",
     "id": "common-tools",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "Base tools to be added on top of regular devcontainer images",
     "options": {
         "install_antibody": {
