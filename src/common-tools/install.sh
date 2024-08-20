@@ -41,7 +41,7 @@ install_debian_packages() {
 
         if [ "$INSTALL_GUM" = "true" ]; then
             package_list="${package_list} software-properties-common gum"
-
+        fi
     fi
 
     echo "Packages to verify are installed: ${package_list}"
